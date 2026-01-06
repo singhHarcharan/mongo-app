@@ -1,6 +1,7 @@
 import mongoose, { Schema, model } from 'mongoose';
 
-const mongoUrl: string = 'mongodb://localhost:27017/myDatabase';
+// Use environment variable for MongoDB URL with fallback to localhost for development
+const mongoUrl: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/myDatabase';
 
 // Connect to MongoDB
 mongoose.connect(mongoUrl)
